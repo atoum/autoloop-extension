@@ -1,0 +1,23 @@
+{
+    "name": "atoum/autoloop-extension",
+    "type": "library",
+    "description": "Automaticly run atoum's loop mode on file change",
+    "keywords": ["atoum","test","unit testing"],
+    "homepage": "http://www.atoum.org",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Adrien Gallou",
+            "email": "adriengallou@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "mageekguy\\atoum\\autoloop\\": "classes"
+        }
+    },
+    "require": {
+        "atoum/atoum": ">=1.0,<3.0",
+        "jasonlewis/resource-watcher": "^1.2"
+    }
+}
