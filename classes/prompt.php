@@ -4,9 +4,21 @@ namespace mageekguy\atoum\autoloop;
 
 class prompt extends \mageekguy\atoum\script\prompt
 {
-
+    /**
+     * @var \mageekguy\atoum\runner
+     */
     protected $runner;
 
+    /**
+     * @var configuration
+     */
+    protected $configuration;
+
+    /**
+     * @param string $message
+     *
+     * @return string
+     */
     public function ask($message)
     {
 
@@ -26,7 +38,10 @@ class prompt extends \mageekguy\atoum\script\prompt
             $watcher->stop();
         };
 
-        $watcher->watch(__DIR__ . '/../classes')->onAnything($onEvent);
+
+        foreach ($this->configuration->getWatchedFiles() as $watchedFile) {
+            $watcher->watch($watchedFile)->onAnything($onEvent);
+        }
 
         foreach ($this->gerRunner()->getTestPaths() as $path) {
             $watcher->watch($path)->onAnything($onEvent);
@@ -55,4 +70,23 @@ class prompt extends \mageekguy\atoum\script\prompt
         $this->runner = $runner;
     }
 
+    /**
+     * @return configuration
+     */
+    public function getConfiguration()
+    {
+        return $this->configuration;
+    }
+
+    /**
+     * @param configuration $configuration
+     *
+     * @return $this
+     */
+    public function setConfiguration(configuration $configuration)
+    {
+        $this->configuration = $configuration;
+
+        return $this;
+    }
 }

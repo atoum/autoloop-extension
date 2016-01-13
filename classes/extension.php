@@ -9,11 +9,18 @@ use mageekguy\atoum\test;
 
 class extension implements atoum\extension
 {
+
+    /**
+     * @var configuration
+     */
+    protected $configuration;
+
     /**
      * @param atoum\configurator $configurator
      */
     public function __construct(atoum\configurator $configurator = null)
     {
+        $this->configuration = $configuration = new configuration();
 
         if ($configurator)
         {
@@ -27,13 +34,14 @@ class extension implements atoum\extension
                 ->addArgumentHandler($testHandler, array('--test-it'))
             ;
 
-            $autoLoopHandler = function(\mageekguy\atoum\scripts\runner $script, $argument, $values) {
+            $autoLoopHandler = function(\mageekguy\atoum\scripts\runner $script, $argument, $values) use ($configuration) {
                 $script->enableLoopMode();
 
                 $customPrompt = new prompt();
                 $customPrompt->setOutputWriter($script->getPrompt()->getOutputWriter());
                 $customPrompt->setInputReader($script->getPrompt()->getInputReader());
                 $customPrompt->setRunner($script->getRunner());
+                $customPrompt->setConfiguration($configuration);
                 $script->setPrompt($customPrompt);
 
             };
@@ -49,22 +57,54 @@ class extension implements atoum\extension
         }
     }
 
+
+    /**
+     * @param array $watchedFiles
+     *
+     * @return $this
+     */
+    public function setWatchedFiles(array $watchedFiles = array())
+    {
+        $this->configuration->setWatchedFiles($watchedFiles);
+
+        return $this;
+    }
+
+    /**
+     * @param runner $runner
+     *
+     * @return $this
+     */
     public function setRunner(runner $runner)
     {
         return $this;
     }
 
+    /**
+     * @param runner $runner
+     * @return $this
+     */
     public function addToRunner(\mageekguy\atoum\runner $runner)
     {
-        $runner->addExtension($this, $this->configuration);
+        $runner->addExtension($this);
 
         return $this;
     }
 
+    /**
+     * @param test $test
+     *
+     * @return $this
+     */
     public function setTest(test $test)
     {
         return $this;
     }
 
+    /**
+     * @param $event
+     *
+     * @param observable $observable
+     */
     public function handleEvent($event, observable $observable) {}
 }
