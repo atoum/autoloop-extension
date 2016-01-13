@@ -43,12 +43,26 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 ## Use it
 
-When the extension is loaded a new option is available :  
+When the extension is loaded a new option is available : 
 
 ```
 --autoloop: Automaticly relaunch tests on file change (implies --loop)
 ```
 
+So, instead of launch the loop mode like this (an having to press enter each time you want to run the tests) : 
+
+
+```
+./vendor/bin/atoum --loop
+```
+
+Just run the tests like this : 
+
+```
+./vendor/bin/atoum --autoloop
+```
+
+All your usual options are available. 
 
 ## Links
 
