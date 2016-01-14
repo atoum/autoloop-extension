@@ -2,6 +2,12 @@
 
 namespace mageekguy\atoum\autoloop;
 
+use Illuminate\Filesystem\Filesystem;
+use JasonLewis\ResourceWatcher\Event;
+use JasonLewis\ResourceWatcher\Resource\FileResource;
+use JasonLewis\ResourceWatcher\Tracker;
+use JasonLewis\ResourceWatcher\Watcher;
+
 class prompt extends \mageekguy\atoum\script\prompt
 {
     /**
@@ -27,17 +33,14 @@ class prompt extends \mageekguy\atoum\script\prompt
             return parent::ask($message);
         }
 
-        $files = new \Illuminate\Filesystem\Filesystem;
+        $watcher = new Watcher(new Tracker, new Filesystem);
+        /** @var \mageekguy\atoum\writers\std\out $outputWriter */
+        $outputWriter = $this->getOutputWriter();
 
-        $tracker = new \JasonLewis\ResourceWatcher\Tracker;
-
-        $watcher = new \JasonLewis\ResourceWatcher\Watcher($tracker, $files);
-
-        $onEvent = function(\JasonLewis\ResourceWatcher\Event $event, \JasonLewis\ResourceWatcher\Resource\FileResource $fileResource, $path) use ($watcher) {
-            echo $fileResource->getPath() . " has been modified.".PHP_EOL;
+        $onEvent = function(Event $event, FileResource $fileResource, $path) use ($watcher, $outputWriter) {
+            $outputWriter->write($fileResource->getPath() . " has been modified." . PHP_EOL);
             $watcher->stop();
         };
-
 
         foreach ($this->configuration->getWatchedFiles() as $watchedFile) {
             $watcher->watch($watchedFile)->onAnything($onEvent);
@@ -47,7 +50,7 @@ class prompt extends \mageekguy\atoum\script\prompt
             $watcher->watch($path)->onAnything($onEvent);
         }
 
-        echo 'Waiting for a file to change to run the test(s)... (Use CTRL+C to stop)' . PHP_EOL;
+        $outputWriter->write('Waiting for a file to change to run the test(s)... (Use CTRL+C to stop)'. PHP_EOL);
 
         $watcher->start(10000);
 
