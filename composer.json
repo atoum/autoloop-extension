@@ -18,6 +18,6 @@
     },
     "require": {
         "atoum/atoum": ">=1.0,<3.0",
-        "jasonlewis/resource-watcher": "^1.2"
+        "jasonlewis/resource-watcher": ">=1.0,<2.0"
     }
 }
