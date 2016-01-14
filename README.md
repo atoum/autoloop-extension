@@ -28,7 +28,7 @@ require_once __DIR__ . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'a
 
 $extension = new mageekguy\atoum\autoloop\extension($script);
 $extension
-    ->setWatchedFiles(array(__DIR__ . '/src'));
+    ->setWatchedFiles(array(__DIR__ . '/src'))
     ->addToRunner($runner)
 ;
 ```
