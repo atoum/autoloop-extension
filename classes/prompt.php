@@ -43,7 +43,7 @@ class prompt extends \mageekguy\atoum\script\prompt
             $watcher->watch($watchedFile)->onAnything($onEvent);
         }
 
-        foreach ($this->gerRunner()->getTestPaths() as $path) {
+        foreach ($this->getRunner()->getTestPaths() as $path) {
             $watcher->watch($path)->onAnything($onEvent);
         }
 
@@ -57,7 +57,7 @@ class prompt extends \mageekguy\atoum\script\prompt
     /**
      * @return \mageekguy\atoum\runner
      */
-    public function gerRunner()
+    public function getRunner()
     {
         return $this->runner;
     }
