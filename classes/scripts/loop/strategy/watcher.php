@@ -1,17 +1,13 @@
 <?php
 
-namespace mageekguy\atoum\autoloop;
+namespace mageekguy\atoum\autoloop\scripts\loop\strategy;
 
 use Lurker\Event\FilesystemEvent;
 use Lurker\ResourceWatcher;
+use mageekguy\atoum\autoloop\configuration;
 
-class prompt extends \mageekguy\atoum\script\prompt
+class watcher implements \mageekguy\atoum\scripts\loop\strategy
 {
-    /**
-     * @var \mageekguy\atoum\runner
-     */
-    protected $runner;
-
     /**
      * @var configuration
      */
@@ -22,15 +18,10 @@ class prompt extends \mageekguy\atoum\script\prompt
      *
      * @return string
      */
-    public function ask($message)
+    public function runAgain(\mageekguy\atoum\scripts\runner $runner)
     {
-        $runAgainText = "Press <Enter> to reexecute, press any other key and <Enter> to stop...";
-        if ($message != $runAgainText) {
-            return parent::ask($message);
-        }
-
         /** @var \mageekguy\atoum\writers\std\out $outputWriter */
-        $outputWriter = $this->getOutputWriter();
+        $outputWriter = $runner->getOutputWriter();
 
         $watcher = new ResourceWatcher;
 
@@ -44,7 +35,7 @@ class prompt extends \mageekguy\atoum\script\prompt
             $watcher->addListener($watchedFile, $onEvent);
         }
 
-        foreach ($this->getRunner()->getTestPaths() as $path) {
+        foreach ($runner->getRunner()->getTestPaths() as $path) {
             $watcher->track($path, $path);
             $watcher->addListener($path, $onEvent);
         }
@@ -54,22 +45,6 @@ class prompt extends \mageekguy\atoum\script\prompt
         $watcher->start();
 
         return '';
-    }
-
-    /**
-     * @return \mageekguy\atoum\runner
-     */
-    public function getRunner()
-    {
-        return $this->runner;
-    }
-
-    /**
-     * @param $runner
-     */
-    public function setRunner($runner)
-    {
-        $this->runner = $runner;
     }
 
     /**
