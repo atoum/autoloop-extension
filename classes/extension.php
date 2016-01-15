@@ -37,13 +37,10 @@ class extension implements atoum\extension
             $autoLoopHandler = function(\mageekguy\atoum\scripts\runner $script, $argument, $values) use ($configuration) {
                 $script->enableLoopMode();
 
-                $customPrompt = new prompt();
-                $customPrompt->setOutputWriter($script->getPrompt()->getOutputWriter());
-                $customPrompt->setInputReader($script->getPrompt()->getInputReader());
-                $customPrompt->setRunner($script->getRunner());
-                $customPrompt->setConfiguration($configuration);
-                $script->setPrompt($customPrompt);
+                $watcherStrategy = new scripts\runner\loopers\watcher($script);
+                $watcherStrategy->setConfiguration($configuration);
 
+                $script->setLooper($watcherStrategy);
             };
 
             $script
