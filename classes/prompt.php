@@ -35,7 +35,7 @@ class prompt extends \mageekguy\atoum\script\prompt
         $watcher = new ResourceWatcher;
 
         $onEvent = function(FilesystemEvent $event) use ($watcher, $outputWriter) {
-            $outputWriter->write($event->getResource()->getId() . " has been modified." . PHP_EOL);
+            $outputWriter->write((string) $event->getResource() . " has been modified." . PHP_EOL);
             $watcher->stop();
         };
 
