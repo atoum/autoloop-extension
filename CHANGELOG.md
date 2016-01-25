@@ -5,7 +5,7 @@
 
 ## Bugfix
 
-* [#3](https://github.com/atoum/atoum/pull/3) Fix display hash message instead of filename ([@vonglasow])
+* [#3](https://github.com/atoum/autoloop-extension/pull/3) Fix display hash message instead of filename ([@vonglasow])
 
 
 # 0.0.1 - 2016-01-14
