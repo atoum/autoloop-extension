@@ -64,6 +64,34 @@ Just run the tests like this :
 
 All your usual options are available. 
 
+## Tips
+
+### Notifications
+
+This extension works well with with atoum's notification.
+
+```php
+//.atoum.php
+
+$report = $script->addDefaultReport();
+
+$notifier = new atoum\report\fields\runner\result\notifier\image\libnotify();
+
+$notifier
+    ->setSuccessImage('./vendor/atoum/atoum/resources/images/logo/success.png')
+    ->setFailureImage('./vendor/atoum/atoum/resources/images/logo/failure.png')
+;
+
+$report
+    ->addField($notifier)
+;
+```
+
+With a setup like this, you will not even have to look at your console to see your test results. Here is what it looks like:
+
+![Demo](doc/demo_notifications.gif)
+
+
 ## Links
 
 * [atoum](http://atoum.org)
