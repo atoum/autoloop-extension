@@ -1,5 +1,9 @@
 # `dev-master`
 
+# 0.1.0 - 2016-05-29
+
+* [#4](https://github.com/atoum/autoloop-extension/pull/4) Support for atoum >2.7 (Use looper interface) ([@agallou])
+
 
 # 0.0.2 - 2016-01-25
 
@@ -14,3 +18,4 @@
 
 
 [@vonglasow]: https://github.com/vonglasow
+[@agallou]: https://github.com/agallou
