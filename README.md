@@ -1,21 +1,20 @@
 # atoum/autoloop-extension [![Build Status](https://travis-ci.org/atoum/autoloop-extension.svg?branch=master)](https://travis-ci.org/atoum/autoloop-extension)
 
 
-autoloop-extension allows you automaticly run your tests in atoum's loop mode when files are changes.
+The `autoloop` extension allows to automatically run tests in atoum's loop mode when files are modified.
 
 ## Example
 
-Here is an example : we can see that the test files are automaticly executed when the classes and test classes are changed.
+In the following example, we can see that the test suites are automatically executed when the classes and test classes are modified.
 
 ![Demo](doc/demo.gif)
 
-
 ## Install it
 
-Install extension using [composer](https://getcomposer.org):
+Install the extension using [Composer](https://getcomposer.org):
 
-```
-composer require --dev atoum/autoloop-extension
+```sh
+$ composer require --dev atoum/autoloop-extension
 ```
 
 Enable and configure the extension using atoum configuration file:
@@ -34,7 +33,7 @@ $extension
 ;
 ```
 
-Add composer autoloader in your `.bootstrap.atoum.php` file:
+Add Composer autoloader in the `.bootstrap.atoum.php` file:
 
 ```php
 <?php
@@ -42,28 +41,27 @@ Add composer autoloader in your `.bootstrap.atoum.php` file:
 require_once __DIR__ . '/vendor/autoload.php';
 ```
 
-## Use it
+## Using it
 
-When the extension is loaded a new option is available : 
-
-```
---autoloop: Automaticly relaunch tests on file change (implies --loop)
-```
-
-So, instead of launch the loop mode like this (an having to press enter each time you want to run the tests) : 
-
+Thee new `--autoloop` option is available when the extension is correctly loaded:
 
 ```
-./vendor/bin/atoum --loop
+--autoloop: Automatically relaunch tests on file modification (implies --loop)
 ```
 
-Just run the tests like this : 
+So instead of running the loop mode (and having to press `enter` each time tests need to run) like this:
+
+```sh
+$ ./vendor/bin/atoum --loop
+```
+
+Just run:
 
 ```
-./vendor/bin/atoum --autoloop
+$ ./vendor/bin/atoum --autoloop
 ```
 
-All your usual options are available. 
+All the usual options are available.
 
 ## Tips
 
@@ -101,4 +99,4 @@ With a setup like this, you will not even have to look at your console to see yo
 
 ## Licence
 
-autoloop-extension is released under the MIT License. See the bundled LICENSE file for details.
+`autoloop-extension` is released under the MIT License. See the bundled `LICENSE` file for details.
