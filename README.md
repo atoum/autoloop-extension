@@ -18,28 +18,17 @@ Install extension using [composer](https://getcomposer.org):
 composer require --dev atoum/autoloop-extension
 ```
 
-Enable and configure the extension using atoum configuration file:
+Then, the only thing you have to do is to set the watched files like this:
 
 ```php
-<?php
 
+<?php
 // .atoum.php
 
-require_once __DIR__ . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
-
-$extension = new mageekguy\atoum\autoloop\extension($script);
-$extension
+$runner
+    ->getExtension(mageekguy\atoum\autoloop\extension::class)
     ->setWatchedFiles(array(__DIR__ . '/src'))
-    ->addToRunner($runner)
 ;
-```
-
-Add composer autoloader in your `.bootstrap.atoum.php` file:
-
-```php
-<?php
-
-require_once __DIR__ . '/vendor/autoload.php';
 ```
 
 ## Use it
