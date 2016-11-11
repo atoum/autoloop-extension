@@ -102,3 +102,5 @@ With a setup like this, you will not even have to look at your console to see yo
 ## Licence
 
 autoloop-extension is released under the MIT License. See the bundled LICENSE file for details.
+
+![atoum](http://atoum.org/images/logo/atoum.png)
