@@ -2,7 +2,7 @@
     "name": "atoum/autoloop-extension",
     "type": "library",
     "description": "Automaticly run atoum's loop mode on file change",
-    "keywords": ["atoum","test","unit testing","TDD","atoum-extension"],
+    "keywords": ["TDD", "atoum", "test", "unit testing", "atoum-extension"],
     "homepage": "http://www.atoum.org",
     "license": "MIT",
     "authors": [
