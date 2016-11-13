@@ -51,7 +51,7 @@ class extension implements atoum\extension
                     $autoLoopHandler,
                     array('--autoloop'),
                     null,
-                    $script->getLocale()->_('Automatically relaunch tests on file modification (implies --loop))')
+                    $script->getLocale()->_('Automatically relaunch tests on file modification (implies --loop)')
                 )
             ;
         }
