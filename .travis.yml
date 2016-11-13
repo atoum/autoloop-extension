@@ -12,4 +12,4 @@ env:
 sudo: false
 script:
   - composer update $COMPOSER_PREFER
-  - ./vendor/bin/atoum
+  - ./vendor/bin/atoum --test-ext -p 'php -n -ddate.timezone=UTC'

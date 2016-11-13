@@ -14,10 +14,12 @@
     "autoload": {
         "psr-4": {
             "mageekguy\\atoum\\autoloop\\": "classes"
-        }
+        },
+        "files": ["configuration.php"]
     },
+    "minimum-stability": "beta",
     "require": {
-        "atoum/atoum": ">=2.6.0,<3.0",
-        "henrikbjorn/lurker": ">=1.1,<2.0"
+        "atoum/atoum": "^2.9.0",
+        "henrikbjorn/lurker": "^1.1"
     }
 }

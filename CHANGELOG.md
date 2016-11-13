@@ -1,5 +1,7 @@
 # `dev-master`
 
+* [#10](https://github.com/atoum/autoloop-extension/pull/10) The extension now self-registers on atoum (needs atoum >=2.8) ([@agallou])
+
 # 0.1.0 - 2016-05-29
 
 * [#4](https://github.com/atoum/autoloop-extension/pull/4) Support for atoum >2.7 (Use looper interface) ([@agallou])
