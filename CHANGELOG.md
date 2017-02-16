@@ -1,4 +1,4 @@
-# `dev-master`
+# 0.2.0 - 2017-02-16
 
 * [#10](https://github.com/atoum/autoloop-extension/pull/10) The extension now self-registers on atoum (needs atoum >=2.9) ([@agallou])
 
