@@ -1,7 +1,7 @@
 # atoum/autoloop-extension [![Build Status](https://travis-ci.org/atoum/autoloop-extension.svg?branch=master)](https://travis-ci.org/atoum/autoloop-extension)
 
 
-autoloop-extension allows you automaticly run your tests in atoum's loop mode when files are changes.
+autoloop-extension allows you automaticly run your tests in atoum's loop mode when files are changed.
 
 ## Example
 
