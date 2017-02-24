@@ -19,7 +19,7 @@
     },
     "minimum-stability": "beta",
     "require": {
-        "atoum/atoum": "^2.9.0",
+        "atoum/atoum": "^2.9 | ^3.0",
         "henrikbjorn/lurker": "^1.1"
     }
 }
