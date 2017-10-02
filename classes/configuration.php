@@ -5,7 +5,7 @@ namespace mageekguy\atoum\autoloop;
 class configuration implements \mageekguy\atoum\extension\configuration
 {
     /**
-     * @var
+     * @var array
      */
     private $watchedFiles = array();
 
@@ -48,7 +48,7 @@ class configuration implements \mageekguy\atoum\extension\configuration
     }
 
     /**
-     * @return ClientConfiguration
+     * @return array
      */
     public function getWatchedFiles()
     {

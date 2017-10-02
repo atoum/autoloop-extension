@@ -27,7 +27,7 @@ Then, the only thing you have to do is to set the watched files like this:
 
 $runner
     ->getExtension(mageekguy\atoum\autoloop\extension::class)
-    ->setWatchedFiles(array(__DIR__ . '/src'))
+        ->setWatchedFiles(array(__DIR__ . '/src'))
 ;
 ```
 
@@ -68,8 +68,8 @@ $report = $script->addDefaultReport();
 $notifier = new atoum\report\fields\runner\result\notifier\image\libnotify();
 
 $notifier
-    ->setSuccessImage('./vendor/atoum/atoum/resources/images/logo/success.png')
-    ->setFailureImage('./vendor/atoum/atoum/resources/images/logo/failure.png')
+    ->setSuccessImage(__DIR__ . '/vendor/atoum/atoum/resources/images/logo/success.png')
+    ->setFailureImage(__DIR__ . '/vendor/atoum/atoum/resources/images/logo/failure.png')
 ;
 
 $report
