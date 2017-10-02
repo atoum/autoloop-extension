@@ -1,5 +1,6 @@
 # atoum/autoloop-extension [![Build Status](https://travis-ci.org/atoum/autoloop-extension.svg?branch=master)](https://travis-ci.org/atoum/autoloop-extension)
 
+
 autoloop-extension allows you automaticly run your tests in atoum's loop mode when files are changed.
 
 ## Example
@@ -25,10 +26,7 @@ Then, the only thing you have to do is to set the watched files like this:
 // .atoum.php
 
 $runner
-    ->addExtension(
-        (new mageekguy\atoum\autoloop\extension($script))
-            ->setWatchedFiles(array(__DIR__ . '/src'))
-    )
+    ->getExtension(mageekguy\atoum\autoloop\extension::class)
     ->setWatchedFiles(array(__DIR__ . '/src'))
 ;
 ```
@@ -70,8 +68,8 @@ $report = $script->addDefaultReport();
 $notifier = new atoum\report\fields\runner\result\notifier\image\libnotify();
 
 $notifier
-    ->setSuccessImage(__DIR__ . './vendor/atoum/atoum/resources/images/logo/success.png')
-    ->setFailureImage(__DIR__ . './vendor/atoum/atoum/resources/images/logo/failure.png')
+    ->setSuccessImage('./vendor/atoum/atoum/resources/images/logo/success.png')
+    ->setFailureImage('./vendor/atoum/atoum/resources/images/logo/failure.png')
 ;
 
 $report
