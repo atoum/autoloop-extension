@@ -1,12 +1,12 @@
 <?php
 
-namespace mageekguy\atoum\autoloop\scripts\runner\loopers;
+namespace atoum\atoum\autoloop\scripts\runner\loopers;
 
+use atoum\atoum\autoloop\configuration;
+use atoum\atoum\scripts\runner;
+use atoum\atoum\scripts\runner\looper;
 use Lurker\Event\FilesystemEvent;
 use Lurker\ResourceWatcher;
-use mageekguy\atoum\autoloop\configuration;
-use mageekguy\atoum\scripts\runner;
-use mageekguy\atoum\scripts\runner\looper;
 
 class watcher implements looper
 {
@@ -33,7 +33,7 @@ class watcher implements looper
      */
     public function runAgain()
     {
-        /** @var \mageekguy\atoum\writers\std\out $outputWriter */
+        /** @var \atoum\atoum\writers\std\out $outputWriter */
         $outputWriter = $this->runner->getOutputWriter();
 
         $watcher = new ResourceWatcher;

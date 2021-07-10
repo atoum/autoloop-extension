@@ -25,7 +25,7 @@ Then, the only thing you have to do is to set the watched files like this:
 // .atoum.php
 
 $runner
-    ->getExtension(mageekguy\atoum\autoloop\extension::class)
+    ->getExtension(atoum\atoum\autoloop\extension::class)
         ->setWatchedFiles(array(__DIR__ . '/src'))
 ;
 ```

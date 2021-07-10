@@ -1,8 +1,8 @@
 <?php
 
-namespace mageekguy\atoum\autoloop;
+namespace atoum\atoum\autoloop;
 
-class configuration implements \mageekguy\atoum\extension\configuration
+class configuration implements \atoum\atoum\extension\configuration
 {
     /**
      * @var array
