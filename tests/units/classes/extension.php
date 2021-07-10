@@ -2,14 +2,11 @@
 
 namespace mageekguy\atoum\autoloop\tests\units;
 
-use
-    mageekguy\atoum,
-    mageekguy\atoum\autoloop\extension as testedClass
-    ;
+use mageekguy\atoum;
+use mageekguy\atoum\autoloop\extension as testedClass;
 
 class extension extends atoum\test
 {
-
     public function testSetTest()
     {
         $this

@@ -5,7 +5,7 @@ autoloop-extension allows you automaticly run your tests in atoum's loop mode wh
 
 ## Example
 
-Here is an example : we can see that the test files are automaticly executed when the classes and test classes are changed.
+Here is an example: we can see that the test files are automaticly executed when the classes and test classes are changed.
 
 ![Demo](doc/demo.gif)
 
@@ -21,7 +21,6 @@ composer require --dev atoum/autoloop-extension
 Then, the only thing you have to do is to set the watched files like this:
 
 ```php
-
 <?php
 // .atoum.php
 
@@ -33,26 +32,26 @@ $runner
 
 ## Use it
 
-When the extension is loaded a new option is available : 
+When the extension is loaded a new option is available:
 
 ```
 --autoloop: Automaticly relaunch tests on file change (implies --loop)
 ```
 
-So, instead of launch the loop mode like this (an having to press enter each time you want to run the tests) : 
+So, instead of launch the loop mode like this (an having to press enter each time you want to run the tests):
 
 
 ```
 ./vendor/bin/atoum --loop
 ```
 
-Just run the tests like this : 
+Just run the tests like this:
 
 ```
 ./vendor/bin/atoum --autoloop
 ```
 
-All your usual options are available. 
+All your usual options are available.
 
 ## Tips
 

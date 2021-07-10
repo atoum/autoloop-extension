@@ -53,7 +53,7 @@ class watcher implements looper
             $watcher->addListener($path, $onEvent);
         }
 
-        $outputWriter->write('Waiting for a file to change to run the test(s)... (Use CTRL+C to stop)'. PHP_EOL);
+        $outputWriter->write('Waiting for a file to change to run the test(s)... (Use CTRL+C to stop)' . PHP_EOL);
 
         $watcher->start();
 
