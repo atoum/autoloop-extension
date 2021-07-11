@@ -1,10 +1,17 @@
+# Unreleased
+
+* [#20](https://github.com/atoum/autoloop-extension/pull/20) Support atoum 4.x ([@jdslv])
+
+
 # 1.3.0 - 2017-02-24
 
 * [#16](https://github.com/atoum/autoloop-extension/pull/16) Support atoum 3.x ([@jubianchi])
 
+
 # 0.2.0 - 2017-02-16
 
 * [#10](https://github.com/atoum/autoloop-extension/pull/10) The extension now self-registers on atoum (needs atoum >=2.9) ([@agallou])
+
 
 # 0.1.0 - 2016-05-29
 
@@ -26,3 +33,4 @@
 [@vonglasow]: https://github.com/vonglasow
 [@agallou]: https://github.com/agallou
 [@jubianchi]: https://github.com/jubianchi
+[@jdslv]: https://github.com/jdslv

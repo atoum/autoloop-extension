@@ -1,11 +1,11 @@
 <?php
 
-namespace mageekguy\atoum\autoloop;
+namespace atoum\atoum\autoloop;
 
-use mageekguy\atoum;
-use mageekguy\atoum\observable;
-use mageekguy\atoum\runner;
-use mageekguy\atoum\test;
+use atoum\atoum;
+use atoum\atoum\observable;
+use atoum\atoum\runner;
+use atoum\atoum\test;
 
 class extension implements atoum\extension
 {
@@ -34,7 +34,7 @@ class extension implements atoum\extension
                 ->addArgumentHandler($testHandler, array('--test-it'))
             ;
 
-            $autoLoopHandler = function(\mageekguy\atoum\scripts\runner $script, $argument, $values) use ($configuration) {
+            $autoLoopHandler = function(atoum\scripts\runner $script, $argument, $values) use ($configuration) {
                 $script->enableLoopMode();
 
                 $watcherStrategy = new scripts\runner\loopers\watcher($script);
@@ -81,7 +81,7 @@ class extension implements atoum\extension
      * @param runner $runner
      * @return $this
      */
-    public function addToRunner(\mageekguy\atoum\runner $runner)
+    public function addToRunner(runner $runner)
     {
         $runner->addExtension($this);
 

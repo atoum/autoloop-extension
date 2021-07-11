@@ -1,11 +1,11 @@
-# atoum/autoloop-extension [![Build Status](https://travis-ci.org/atoum/autoloop-extension.svg?branch=master)](https://travis-ci.org/atoum/autoloop-extension)
+# atoum/autoloop-extension [![Build Status](https://github.com/atoum/autoloop-extension/workflows/Linux/badge.svg)](https://github.com/atoum/autoloop-extension/actions)
 
 
-autoloop-extension allows you automaticly run your tests in atoum's loop mode when files are changed.
+autoloop-extension allows you automatically run your tests in atoum's loop mode when files are changed.
 
 ## Example
 
-Here is an example : we can see that the test files are automaticly executed when the classes and test classes are changed.
+Here is an example: we can see that the test files are automatically executed when the classes and test classes are changed.
 
 ![Demo](doc/demo.gif)
 
@@ -21,38 +21,37 @@ composer require --dev atoum/autoloop-extension
 Then, the only thing you have to do is to set the watched files like this:
 
 ```php
-
 <?php
 // .atoum.php
 
 $runner
-    ->getExtension(mageekguy\atoum\autoloop\extension::class)
+    ->getExtension(atoum\atoum\autoloop\extension::class)
         ->setWatchedFiles(array(__DIR__ . '/src'))
 ;
 ```
 
 ## Use it
 
-When the extension is loaded a new option is available : 
+When the extension is loaded a new option is available:
 
 ```
---autoloop: Automaticly relaunch tests on file change (implies --loop)
+--autoloop: Automatically relaunch tests on file change (implies --loop)
 ```
 
-So, instead of launch the loop mode like this (an having to press enter each time you want to run the tests) : 
+So, instead of launch the loop mode like this (an having to press enter each time you want to run the tests):
 
 
 ```
 ./vendor/bin/atoum --loop
 ```
 
-Just run the tests like this : 
+Just run the tests like this:
 
 ```
 ./vendor/bin/atoum --autoloop
 ```
 
-All your usual options are available. 
+All your usual options are available.
 
 ## Tips
 
