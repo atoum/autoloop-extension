@@ -1,6 +1,7 @@
 # Unreleased
 
 * [#20](https://github.com/atoum/autoloop-extension/pull/20) Support atoum 4.x ([@jdslv])
+* [#21](https://github.com/atoum/autoloop-extension/pull/21) Remove Symfony dependency ([@jdslv])
 
 
 # 1.3.0 - 2017-02-24
